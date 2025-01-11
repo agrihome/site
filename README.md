@@ -1,2 +1,0 @@
-# site
-agri home site
