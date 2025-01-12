@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://ominous-meme-59vwgq6gpwr2477j-8000.app.github.dev/archon'; 
+const API_URL = 'https://refactored-fortnight-v5px6v46jpgc6pp4-8000.app.github.dev/archon'; 
 
 export const login = async (credentials) => {
   const response = await axios.post(`${API_URL}/token/`, credentials);
