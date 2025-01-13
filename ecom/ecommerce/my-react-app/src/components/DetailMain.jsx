@@ -13,13 +13,14 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
 
   useEffect(() => {
 
-    console.log(id)
+    console.log('useeffect')
 
     const loadDetails = async () => {
       setLoading(true);
 
       try {
         const response = await getDetail(model,id);
+        console.log(response);
         setDetail(response);
         const meta_response = await getMeta(capitalize(model));
         setMeta(meta_response);
@@ -32,7 +33,7 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
     };
 
     loadDetails();
-  }, [id]);
+  }, []);
 
   const handleInputChange = (key, value) => {
     setDetail((detail) => ({
@@ -47,7 +48,7 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
 
   const renderInput = (key) => {
 
-    console.log(meta[key]);
+    console.log('called render Input');
 
     if (['DecimalField','PositiveIntegerField'].includes(meta[key].field_type)) {
       return (
