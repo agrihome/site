@@ -5,7 +5,8 @@ const Appbar = ({ showSideBar, setShowSideBar }) => {
 
 
   return (
-    <div className={`navbar bg-base-100 sticky top-0 z-40 ${!showSideBar?'border':''}`}>
+
+    <div className={`navbar fixed top-0 z-40 text-white	bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%`}>
       {/* Sidebar Toggle Button */}
       <div className="navbar-start">
         <button
@@ -118,6 +119,7 @@ const Appbar = ({ showSideBar, setShowSideBar }) => {
         </div>
       </div>
     </div>
+
   );
 };
 

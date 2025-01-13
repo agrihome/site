@@ -114,6 +114,33 @@ export const getDetail = async (model,id) => {
   }
 };
 
+export const getBulk = async (model,filter = null) => {
+  try {
+    const accessToken = localStorage.getItem('access_token'); // Retrieve the token
+
+    // Prepare the request body with the filter
+    const requestBody = {
+      filter: filter,
+    };
+
+    const response = await axios.post(
+      `${API_URL}/${model}/table`,  // Endpoint for product table
+      requestBody,  // Send the filter in the body
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`, // Include the Authorization header
+        },
+      }
+    );
+
+    return response.data;  // Return the response data
+
+  } catch (error) {
+    console.error('Error fetching products:', error); // Log any errors
+    throw error;  // Propagate the error
+  }
+};
+
 export const postNew = async (model, data) => {
   try {
     const accessToken = localStorage.getItem("access_token");
@@ -190,7 +217,6 @@ export const deleteDetail = async (model, id) => {
     throw error;
   }
 };
-
 
 export const getOrderItems = async (filter = null) => {
   try {

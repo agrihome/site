@@ -7,7 +7,6 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
   const [detail, setDetail] = useState({});
   const [meta, setMeta] = useState({});
   const [edit, setEdit] = useState(false);
-  const [editableFields, setEditableFields] = useState(["price", "stock", "id"]); 
 
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 

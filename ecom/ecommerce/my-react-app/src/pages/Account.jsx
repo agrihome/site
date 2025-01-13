@@ -31,7 +31,7 @@ const Account = () => {
   return (
 
     <div class="grid h-screen place-content-center ">
-    <div className="flex flex-col  items-center gap-4 p-5 mb-10">
+    <div className="flex flex-col  items-center gap-4 p-5 mb-24">
 
       <h1 className="text-3xl font-semibold">Login</h1>
 

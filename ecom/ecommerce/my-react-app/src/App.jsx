@@ -17,13 +17,16 @@ function App() {
 
   return (
     <Router>
-      <div className="flex w-full text-md ">
-        {showSideBar && <Sidebar />}
+      <div className="flex flex-col w-full text-md font-mono">
 
-        <div className="flex flex-col h-screen w-full text-md">
-          <Appbar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
 
-          <div className="w-full h-full overflow-auto">
+
+        <div className="flex  h-screen w-full">
+
+           {showSideBar && <Sidebar />}
+
+
+          <div className="w-full h-full overflow-auto pt-16">
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -51,7 +54,12 @@ function App() {
               </Route>
             </Switch>
           </div>
+
         </div>
+
+        <Appbar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+
+
       </div>
     </Router>
   );
