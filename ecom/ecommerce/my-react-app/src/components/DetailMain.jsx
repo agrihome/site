@@ -66,8 +66,7 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
         <select
           className="select select-bordered w-full max-w-xs"
           value={detail[key] || ""}
-          readOnly={!(edit && !nonEditFields.includes(key))}
-
+          disabled={!(edit && !nonEditFields.includes(key))}
           onChange={(e) => handleInputChange(key, e.target.value)}
         >
             <option key={''} value={''} disabled selected>
@@ -89,7 +88,7 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
         className="textarea textarea-bordered w-full max-w-xs" 
         placeholder="Bio"
         value={detail[key] || ""}
-        readOnly={!(edit && editableFields.includes(key))}
+        readOnly={!(edit && !nonEditFields.includes(key))}
         onChange={(e) => handleInputChange(key, e.target.value)}
         
         ></textarea>
@@ -103,7 +102,7 @@ export default function DetailMain({model, id, detailFields, nonEditFields}) {
         
         <input type="checkbox" className="checkbox checkbox-sm" 
           value={detail[key] || ""}
-          readOnly={!(edit && !nonEditFields.includes(key))}
+          disabled={!(edit && !nonEditFields.includes(key))}
           onChange={(e) => handleInputChange(key, e.target.value)}
         />
 

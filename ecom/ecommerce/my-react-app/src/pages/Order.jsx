@@ -6,4 +6,5 @@ export default function Product() {
   return (
     <DataTable model={'order'} listColumns={listColumns} />
   );
+  
 }
